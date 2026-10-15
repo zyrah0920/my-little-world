@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Little Strawberry World 🍓</title>
+
+    <style>
+        /* STRAWBERRY PINK THEME */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --pink: #ffb8ce;
+            --dark-pink: #e84376;
+            --hot-pink: #ff6f9f;
+            --light-pink: #fff0f5;
+            --blush-pink: #ffd6e3;
+            --brown: #793b50;
+        }
+
+        body {
+            background-color: #ffeaf1;
+            background-image: radial-gradient(
+                #ffc5d7 1.5px, transparent 1.5px
+            );
+            background-size: 22px 22px;
+            color: var(--brown);
+            font-family: "Trebuchet MS", sans-serif;
+            line-height: 1.8;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #ffb8ce;
+            padding: 18px;
+            text-align: center;
+            border-bottom: 3px solid #ff8fb1;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 12px #e8437620;
+        }
+
+        nav a {
+            color: #a82d59;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ff347b;
+            text-decoration: underline;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #fff5f8;
+            border: 2px solid #ffadc5;
+            border-radius: 25px;
+            box-shadow: 5px 6px 0 #ffc6d9;
+        }
+
+        h1, h2, h3 {
+            color: #e84376;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(32px, 6vw, 55px);
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            text-decoration-color: #ffb0c8;
+            text-underline-offset: 8px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        /* HOME */
+
+        .hero {
+            text-align: center;
+            padding: 75px 25px;
+            background: linear-gradient(
+                135deg,
+                #ffb8ce,
+                #ffd5e3,
+                #ff8fb1,
+                #ffc6d9
+            );
+            border: none;
+            box-shadow: none;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .hero h1 {
+            color: #c82e63;
+            text-shadow: 2px 3px 0 #ffffff;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #a82d59;
+            margin-top: 15px;
+        }
+
+        .strawberry {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .small-note {
+            display: inline-block;
+            background: #ffdfeb;
+            border: 2px dashed #f47a9e;
+            border-radius: 25px;
+            padding: 8px 18px;
+            margin-top: 20px;
+            color: #c82e63;
+        }
+
+        /* HOBBY CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #ffe1eb;
+            padding: 18px;
+            border: 2px solid #ffb0c8;
+            border-radius: 22px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) rotate(-1deg);
+            box-shadow: 0 8px 18px #e8437630;
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid white;
+            margin: 10px 0;
+        }
+
+        .tag {
+            color: #c43c68;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* BUTTONS */
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(
+                135deg,
+                #ff75a3,
+                #e84376
+            );
+            color: white;
+            padding: 10px 16px;
+            border: 2px solid #ffabc5;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 0 #d63c6c;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #c82e63;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 0 #a82d59;
+        }
+
+        /* SPOTIFY PLAYER */
+
+        .spotify {
+            width: 100%;
+            height: 352px;
+            border: 3px solid #ffb0c8;
+            border-radius: 18px;
+            margin-top: 12px;
+        }
+
+        /* FAVORITE MOVIE PLAYER */
+
+        .movie-player {
+            display: block;
+            width: 100%;
+            height: 500px;
+            border: 3px solid #ffb0c8;
+            border-radius: 18px;
+            background-color: #ffd6e3;
+            margin-top: 25px;
+        }
+
+        .movie-note {
+            background: #ffe1eb;
+            border: 2px dashed #f47a9e;
+            border-radius: 15px;
+            padding: 12px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .movie-note a {
+            color: #e84376;
+            font-weight: bold;
+        }
+
+        /* FUTURE SELF */
+
+        .future {
+            background: linear-gradient(
+                135deg,
+                #ffe1eb,
+                #fff0f5,
+                #ffd0e0
+            );
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .dream-list {
+            background: #ffcddd;
+            border: 2px dashed #f47a9e;
+            border-radius: 22px;
+            padding: 22px;
+            list-style: none;
+        }
+
+        .dream-list li {
+            padding: 5px 0;
+        }
+
+        .dream-list li::before {
+            content: "♡ ";
+            color: #e84376;
+            font-weight: bold;
+        }
+
+        /* QUOTE */
+
+        .quote {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: #d6336c;
+            font-size: 19px;
+            text-align: center;
+            margin: 25px 0 5px;
+            background: #ffd9e6;
+            border-radius: 20px;
+            padding: 12px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 35px 15px;
+            background-color: #ffb8ce;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #ffffff20 10px,
+                #ffffff20 20px
+            );
+            color: #a82d59;
+            border-top: 3px dashed #e84376;
+        }
+
+        /* MOBILE DESIGN */
+
+        @media (max-width: 750px) {
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin: 20px 12px;
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 55px 15px;
+            }
+
+            .movie-player {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav>
+        <a href="#home">Home ♡</a>
+        <a href="#hobbies">My Hobbies</a>
+        <a href="#music">My Playlist</a>
+        <a href="#movie">Favorite Movie</a>
+        <a href="#future">Future Me</a>
+    </nav>
+
+    <!-- HOME SECTION -->
+
+    <section class="hero" id="home">
+        <div class="strawberry">🍓 🎀 🍓</div>
+
+        <h1>My Little World</h1>
+
+        <p class="subtitle">
+            books ♡ movies ♡ music ♡ dreams
+        </p>
+
+        <p>
+            A little glimpse into my world.
+        </p>
+
+        <div class="small-note">
+            Welcome to my world, lovely human! ♡
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+
+    <section id="about">
+        <h2>♡ A Little About Me</h2>
+
+        <p>
+            Hi! I'm Zyrah, who finds happiness in the little things:
+            getting lost in a good book, watching captivating movies,
+            and listening to music that understands feelings I cannot
+            always explain.
+        </p>
+
+        <p>
+            I love stories because they let me explore different worlds,
+            experience different kinds of love, and imagine possibilities
+            beyond my own life. Sometimes, the smallest things bring me
+            the greatest comfort.
+        </p>
+
+        <p>
+            <strong>My personal motto:</strong>
+            "Be happy, be genuine, and live and love life to the fullest, with no regrets." ♡
+        </p>
+    </section>
+
+    <!-- MY HOBBIES -->
+
+    <section id="hobbies">
+        <h2>🍓 Things I Love Doing</h2>
+
+        <div class="cards">
+
+            <!-- HOBBY 1: READING -->
+
+            <div class="card">
+                <span class="tag">Hobby No. 01</span>
+
+                <h3>📚 Reading Books</h3>
+
+                <img
+                    src="https://m.media-amazon.com/images/I/71PTI3Wch0L._SL1500_.jpg"
+                    alt="A cozy collection of books">
+
+                <p>
+                    I love reading science fiction and romance books.
+                    Sci-fi lets me explore fascinating worlds, futuristic
+                    ideas, and impossible possibilities, while romance
+                    gives me butterflies and reminds me of the beauty
+                    of human connection.
+                </p>
+
+                <p>
+                    Whether it is a distant galaxy or a slow-burn love
+                    story, I love getting lost in a world beyond my own.
+                </p>
+
+                <div class="small-note">
+                    Just one more chapter... ♡
+                </div>
+            </div>
+
+            <!-- HOBBY 2: MUSIC -->
+
+            <div class="card">
+                <span class="tag">Hobby No. 02</span>
+
+                <h3>🎧 Listening to Music</h3>
+
+                <img
+                    src="https://i.pinimg.com/736x/f5/22/9f/f5229fb8b33883b91b3f1719ca4f74f3.jpg"
+                    alt="Music equipment and headphones">
+
+                <p>
+                    Music is one of my favorite ways to reconnect
+                    with myself. Some songs are a reminder of who I
+                    really am, especially on days when everything
+                    feels a little too loud.
+                </p>
+
+                <p>
+                    This is my playlist. It helps me feel like ME again.
+                </p>
+
+                <a
+                    class="button"
+                    href="https://open.spotify.com/playlist/5xUjn3Pjk26ssrl7Mghy9r?si=KkAdvEnASwGjl-eEzA1ifw"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    ♫ Listen to My Playlist
+                </a>
+            </div>
+
+            <!-- HOBBY 3: MOVIES -->
+
+            <div class="card">
+                <span class="tag">Hobby No. 03</span>
+
+                <h3>🎬 Watching Movies</h3>
+
+                <img
+                    src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/05/howl-s-moving-castle-poster-1.jpeg"
+                    alt="Howl's Moving Castle movie poster">
+
+                <p>
+                    I enjoy watching movies because they allow me to
+                    experience different emotions, discover magical
+                    worlds, and appreciate stories told through
+                    beautiful visuals and music.
+                </p>
+
+                <p>
+                    <strong>My favorite movie:</strong>
+                    Howl's Moving Castle ♡
+                </p>
+
+                <p>
+                    Its magical atmosphere, beautiful animation,
+                    and meaningful story make it a movie I truly love.
+                </p>
+
+                <a
+                    class="button"
+                    href="#movie">
+                    ✧ Explore My Favorite Movie
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- AUDIO SECTION -->
+
+    <section id="music">
+        <h2>🎀 A Playlist That Feels Like Me</h2>
+
+        <p>
+            If I could describe this playlist in one sentence,
+            it would be:
+        </p>
+
+        <p class="quote">
+            "For the days when I need to find my way back to myself." ♡
+        </p>
+
+        <p>
+            Music reminds me that I can pause, start over, and
+            reconnect with the person I am beneath all the noise
+            of everyday life. This is my little safe space,
+            one song at a time.
+        </p>
+
+        <iframe
+            class="spotify"
+            src="https://open.spotify.com/embed/playlist/5xUjn3Pjk26ssrl7Mghy9r"
+            title="My personal Spotify playlist"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+        <p>
+            <em>
+                Put on your headphones, take a deep breath,
+                and just vibe. ♡
+            </em>
+        </p>
+
+        <a
+            class="button"
+            href="https://open.spotify.com/playlist/5xUjn3Pjk26ssrl7Mghy9r?si=KkAdvEnASwGjl-eEzA1ifw"
+            target="_blank"
+            rel="noopener noreferrer">
+            ♡ Open My Spotify Playlist
+        </a>
+    </section>
+
+    <!-- FAVORITE MOVIE SECTION -->
+
+    <section id="movie">
+        <h2>🎬 My Favorite Movie</h2>
+
+        <div class="future-grid">
+
+            <div>
+                <h3>Howl's Moving Castle ♡</h3>
+
+                <p>
+                    A magical world, a moving castle, unforgettable
+                    characters, and a story that feels like a dream.
+                    This movie is one of my favorites because it
+                    combines fantasy, romance, adventure, and heart.
+                </p>
+
+                <p>
+                    I love Howl's Moving Castle because of its
+                    beautiful animation, magical world, and
+                    heartwarming story. I love how it shows that
+                    love goes beyond appearances and that being
+                    brave doesn't mean you have to be fearless.
+                    The movie gives me a sense of comfort and wonder,
+                    and I never get tired of watching it because
+                    it feels like escaping into a beautiful dream.
+                </p>
+
+                <div class="movie-note">
+                    🍓 Now Playing: Howl's Moving Castle 🎀
+                </div>
+            </div>
+
+            <div>
+                <img
+                    src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/05/howl-s-moving-castle-poster-1.jpeg"
+                    alt="Howl's Moving Castle movie poster"
+                    style="width:100%; border-radius:20px; border:5px solid white;">
+
+                <p class="tag">
+                    A little magic goes a long way ✧
+                </p>
+            </div>
+
+        </div>
+
+        <!-- EMBEDDED EPISODE PAGE -->
+
+        <iframe
+            class="movie-player"
+            src="https://kisskh.co/Drama/Howl-s-Moving-Castle--Dub-/Episode-1?id=5470&amp;ep=98097&amp;page=0&amp;pageSize=100"
+            title="Howl's Moving Castle - Episode 1"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+
+        <p class="movie-note">
+            ♡ If the player doesn't load,
+            <a
+                href="https://kisskh.co/Drama/Howl-s-Moving-Castle--Dub-/Episode-1?id=5470&amp;ep=98097&amp;page=0&amp;pageSize=100"
+                target="_blank"
+                rel="noopener noreferrer">
+                open the episode page here
+            </a>.
+        </p>
+
+    </section>
+
+    <!-- FUTURE SELF SECTION -->
+
+    <section class="future" id="future">
+        <h2>♡ How I See Myself 10 Years From Now</h2>
+
+        <div class="future-grid">
+
+            <div>
+                <p>
+                    Ten years from now, I see myself as a more
+                    confident, independent, and fulfilled version
+                    of who I am today. I hope to have a career that
+                    I am proud of, a life that gives me peace, and
+                    the freedom to experience the things I have
+                    always dreamed about.
+                </p>
+
+                <p>
+                    I imagine myself exploring new places, discovering
+                    different cultures, collecting memories, and
+                    building a home that feels warm and safe.
+                    I want to be financially stable, continue growing
+                    as a person, and surround myself with people
+                    who genuinely care about and love me.
+                </p>
+
+                <p>
+                    Most importantly, I hope I never lose the little
+                    things that make me who I am: my love for books,
+                    my comfort movies, my music, my curiosity, and
+                    my ability to find happiness in simple moments.
+                </p>
+
+                <p>
+                    I know that life will not always go according
+                    to plan, but I hope my future self will look
+                    back at the person I am today with kindness,
+                    pride, and a beautiful smile on her face.
+                </p>
+            </div>
+
+            <div>
+                <h3>🎀 My Little Dream List</h3>
+
+                <ul class="dream-list">
+                    <li>Build a successful career</li>
+                    <li>Achieve financial independence</li>
+                    <li>Travel to places I've dreamed about</li>
+                    <li>Create a cozy home of my own</li>
+                    <li>Make beautiful memories with loved ones</li>
+                    <li>Keep reading books and watching movies</li>
+                    <li>Protect my peace and happiness</li>
+                    <li>Become wiser without losing my softness</li>
+                    <li>Continue becoming the best version of me</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="quote">
+            "Same little girl, just a bit older, wiser,
+            happier, and closer to her dreams." 🍓
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>Made with love, daydreams, and hopes. ♡</p>
+        <p>Thank you for visiting my little world!</p>
+        <p>© My Little Strawberry World · 2026</p>
+        <p>🍓 Keep growing, keep dreaming, keep being you. 🎀</p>
+    </footer>
+
+</body>
+</html>
